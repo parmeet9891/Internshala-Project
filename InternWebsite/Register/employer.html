@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+    body {
+      margin-top: 20px;
+      font-family: 'Lato', sans-serif;
+    }
+    .header {
+        margin-top: 20px;
+        background-color: lightgray;
+    }
+    img {
+        width: 562px;
+        height: 316px;
+    }
+    .panel {
+      width: 60%;
+      margin: auto;
+    }
+  </style>
+  <!-- FORM VALIDATION -->
+  <script type="text/javascript">
+  function validateForm() {
+    if(document.employerRegisterForm.inputEmail.value === "") {
+      alert("Please Provide the email");
+      document.employerRegisterForm.inputEmail.focus();
+      return false;
+    }
+
+    if(document.employerRegisterForm.inputUser.value === "") {
+      alert("Please Provide Username");
+      document.employerRegisterForm.inputUser.focus();
+      return false;
+    }
+
+    if(document.employerRegisterForm.inputPassword.value === "") {
+      alert("Please Provide Password!");
+      document.employerRegisterForm.inputPassword.focus();
+      return false;
+    }
+  }
+  </script>
+  <!-- ENDS HERE -->
+</head>
+<body>
+    <header class="header container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>INTERN-<span style="color: skyblue;">CENTER</span></h2>
+            </div>
+        </div>
+    </header>
+    <br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../Images/employer.jpg" alt="Internship-Image"/>
+        </div>
+  <div class="col-md-6">
+  <div class="panel panel-primary">
+  <div class="panel-heading">Registeration Form for Employer</div>
+  <div class="panel-body">
+      
+      <form name="employerRegisterForm" action="PHP/RegisterEmployee.php" onsubmit="return validateForm()" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="inputEmail" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputUsername">Username</label>
+            <input type="text" class="form-control" name="inputUser" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="inputPassword" placeholder="Enter Your Password">
+        </div>
+        <input type="submit" class="btn btn-primary" name="employerRegister" value="Submit">
+           </form>
+        </div>
+       </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
